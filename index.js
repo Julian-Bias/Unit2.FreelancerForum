@@ -50,9 +50,10 @@ function addHire() {
     clearInterval(addHireIntervalId);
     return;
   }
-  const newHire = freelancers2[currentHireIndex];
+  const randomIndex = Math.floor(Math.random() * freelancers2.length);
+  const newHire = freelancers2[randomIndex];
   freelancers.push(newHire);
-  currentHireIndex++;
+  freelancers2.splice(randomIndex, 1);
 
   render();
   updateAveragePrice();
